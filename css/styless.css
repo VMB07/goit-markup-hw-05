@@ -123,7 +123,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0) rotate(120deg);
+  transform: translate(-50%, -50%) scale(1) rotate(0);
   min-width: 528px;
   min-height: 581px;
   background: var(--icon-bg-cl);
@@ -133,7 +133,7 @@ img {
 }
 
 .backdrop.is-hidden .modal {
-    transform: translate(-50%, -50%) scale(0) rotate(120deg);
+    transform: translate(-50%, -50%) scale(0.3 ) rotate(120deg);
 }    
 
 .btn-close {
