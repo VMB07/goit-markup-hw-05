@@ -110,7 +110,7 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 100;
   opacity: 1;
-  transition: opacity var(--transition) visibility var(--transition);
+  transition: opacity var(--transition), visibility var(--transition);
 }
 
 .is-hidden {
@@ -148,6 +148,47 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: var(--icon-bg-cl);
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  fill: #2196f3;
+}
+
+/* Form */
+
+.form-title {
+  padding: 40px 40px 0 40px;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--black-text-cl);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 12px;
+}
+
+.modal-label {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--grey-text-cl);
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
 
 /*Header*/
@@ -438,12 +479,6 @@ img {
   transition: fill var(--transition);
 }
 
-
-.social-link:hover,
-.social-link:focus {
-  background-color: var(--accent-tx-cl);
-}
-
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
   fill: var(--icon-bg-cl);
@@ -475,7 +510,7 @@ img {
   border-radius: 4px;
   padding: 16px;
   fill:var(--icons-cl);
-  transition: border-color var(--transition) fill var(--transition);
+  transition: border-color var(--transition), fill var(--transition);
 }
 
 /*Footer*/
@@ -576,18 +611,6 @@ img {
 
 /*Portfulio nav*/
 
-.filter-btn:hover,
-.filter-btn:focus .accent-btn {
-  color: var(--white-text-cl);
-  background-color: var(--accent-tx-cl);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
-/* .accent-btn {
-  background-color: var(--accent-tx-cl);
-  color: var(--white-text-cl);
-} */
-
 .filter-list {
   display: flex;
   align-items: center;
@@ -608,7 +631,15 @@ img {
   padding: 6px 22px;
   border-radius: 4px;
   border: none;
-  transition: color var(--transition) background-color var(--transition) box-shadow var(--transition);
+  transition: color var(--transition), background-color var(--transition), box-shadow var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn:focus,
+.accent-btn {
+  color: var(--white-text-cl);
+  background-color: var(--accent-tx-cl);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /*Portfolio img*/
@@ -628,7 +659,7 @@ img {
 .portfolio-link {
   display: flex;
   flex-direction: column;
-  transition: color var(--transition);
+  transition: box-shadow var(--transition);
 }
 
 .portfolio-link:hover,
