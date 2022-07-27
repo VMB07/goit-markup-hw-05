@@ -107,10 +107,10 @@ img {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0,2);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 100;
   opacity: 1;
-  transition: opacity var(--transition);
+  transition: opacity var(--transition) visibility var(--transition);
 }
 
 .is-hidden {
@@ -123,7 +123,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0) rotate(120deg);
   min-width: 528px;
   min-height: 581px;
   background: var(--icon-bg-cl);
@@ -132,9 +132,9 @@ img {
   transition: transform var(--transition);
 }
 
-.backdrob.is-hidden .modal {
-  transform: translate(-50%, -50%);
-}
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0) rotate(120deg);
+}    
 
 .btn-close {
   position: absolute;
@@ -363,15 +363,17 @@ img {
     justify-content: center;
     width: 100%;
     min-height: 70px;
+    padding: 27px;
     bottom: 0;
     position: absolute;
     background: rgba(47, 48, 58, 0.8);
 }
 
 .about-text {
+  font-size: 14px;
+  line-height: calc(16 / 14);
   position: absolute;
   text-align: center;
-  padding: 27px 83px 27px 82px;
   text-transform: uppercase;
   color: var(--icon-bg-cl);
 }
@@ -380,6 +382,11 @@ img {
 
 .team {
   background-color: var(--team-bg-cl);
+}
+
+.team-item {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-wrapper {
@@ -439,9 +446,8 @@ img {
 
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
-  fill: #fff;
+  fill: var(--icon-bg-cl);
 }
-
 
 /* Clients */
 
@@ -457,7 +463,8 @@ img {
 
 .clients-link:hover,
 .clients-link:focus {
-  border-color: var(--accent-tx-cl)
+  border-color: var(--accent-tx-cl);
+  fill: var(--accent-tx-cl)
 }
 
 .clients-link {
@@ -468,12 +475,7 @@ img {
   border-radius: 4px;
   padding: 16px;
   fill:var(--icons-cl);
-  transition: background-color var(--transition);
-}
-
-.clients-link:hover ,
-.clients-link:focus {
-  fill: var(--accent-tx-cl)
+  transition: border-color var(--transition) fill var(--transition);
 }
 
 /*Footer*/
@@ -575,11 +577,16 @@ img {
 /*Portfulio nav*/
 
 .filter-btn:hover,
-.filter-btn:focus {
+.filter-btn:focus .accent-btn {
   color: var(--white-text-cl);
   background-color: var(--accent-tx-cl);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+/* .accent-btn {
+  background-color: var(--accent-tx-cl);
+  color: var(--white-text-cl);
+} */
 
 .filter-list {
   display: flex;
@@ -601,12 +608,7 @@ img {
   padding: 6px 22px;
   border-radius: 4px;
   border: none;
-  transition: color var(--transition);
-}
-
-.accent-btn {
-  background-color: var(--accent-tx-cl);
-  color: var(--white-text-cl);
+  transition: color var(--transition) background-color var(--transition) box-shadow var(--transition);
 }
 
 /*Portfolio img*/
